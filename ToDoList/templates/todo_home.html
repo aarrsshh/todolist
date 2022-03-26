@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <title>ToDo List</title>
+</head>
+<body>
+<div style="margin-top: 20px">
+    <center><h1>To-Do List</h1></center>
+    {% include 'modals.html' %}
+
+    {% include 'navbar.html' %}
+</div>
+</body>
+</html>

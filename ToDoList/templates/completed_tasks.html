@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+        <tr >
+            <th colspan="2">Task Name</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for todo in todoList %}
+        {% if todo.completed %}
+        <tr>
+            <td colspan="2">{{todo.title}}</td>
+            <td>{{todo.created_at}}</td>
+            <td>
+                <button type="button" class="btn btn-danger btn-sm"
+                        onclick="window.open('{% url 'delete_task' todo.id %}', '_self')"
+                >Delete Task</button>
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% if completed_task_count == 0 %}
+        <tr>
+            <td colspan="5"><center>No Completed Task present</center></td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>

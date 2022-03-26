@@ -1,0 +1,38 @@
+<nav class="container">
+  <div class="nav nav-tabs clearfix" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active"
+       id="nav-all-tasks-tab" data-toggle="tab"
+       href="#alltasks" role="tab"
+       aria-controls="alltasks" aria-selected="true"
+    >All Tasks <span class="badge badge-secondary">{{ total_task_count }}</span></a>
+    <a class="nav-item nav-link"
+       id="nav-pending-tasks-tab" data-toggle="tab"
+       href="#pendingtasks" role="tab"
+       aria-controls="pendingtasks" aria-selected="false"
+    >Pending tasks <span class="badge badge-warning">{{ pending_task_count }}</span></a>
+    <a class="nav-item nav-link"
+       id="nav-completed-tasks-tab" data-toggle="tab"
+       href="#completedtasks" role="tab"
+       aria-controls="completedtasks" aria-selected="false"
+    >Completed Tasks <span class="badge badge-success">{{ completed_task_count }}</span></a>
+    <button type="button" class="btn btn-primary btn-outline-info"
+            data-toggle="modal" data-target="#Modal"
+            style="margin-left: 40%"
+    >Add New task
+    </button>
+  </div>
+</nav>
+
+<div style="overflow-y: scroll; scrollbar-width: none; height: 82vh" class="tab-content container" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="alltasks"
+       role="tabpanel" aria-labelledby="nav-all-tasks-tab"
+  >{% include 'all_tasks.html' %}</div>
+
+  <div class="tab-pane fade container" id="pendingtasks"
+       role="tabpanel" aria-labelledby="nav-pending-tasks-tab"
+  >{% include 'pending_tasks.html' %}</div>
+
+  <div class="tab-pane fade container" id="completedtasks"
+       role="tabpanel" aria-labelledby="nav-completed-tasks-tab"
+  >{% include 'completed_tasks.html' %}</div>
+</div>
